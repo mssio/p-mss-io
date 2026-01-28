@@ -18,7 +18,6 @@ export default function Home() {
             >
               Generate
             </Link>
-          
           </div>
         </div>
       </div>
