@@ -1,7 +1,9 @@
+import { randomInt } from "crypto";
+
 const DIGITS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 function randomInRange(start: number, end: number): number {
-  return Math.floor(Math.random() * (end - start + 1) + start);
+  return randomInt(start, end + 1);
 }
 
 export function generatePassword(): string {
