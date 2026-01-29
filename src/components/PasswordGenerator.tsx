@@ -55,6 +55,30 @@ export function PasswordGenerator() {
     void generate();
   }, []);
 
+  const renderPassword = () => {
+    if (isGenerating && !password) {
+      return (
+        <span className="text-gray-400 dark:text-gray-500">Generating...</span>
+      );
+    }
+
+    return password.split("").map((char, index) => {
+      const isNumber = /[0-9]/.test(char);
+      return (
+        <span
+          key={index}
+          className={
+            isNumber
+              ? "text-indigo-600 dark:text-indigo-400 font-semibold"
+              : "text-gray-900 dark:text-gray-50"
+          }
+        >
+          {char}
+        </span>
+      );
+    });
+  };
+
   return (
     <div className="space-y-6">
       <div>
@@ -67,14 +91,13 @@ export function PasswordGenerator() {
           </label>
         </div>
         <div className="mt-2">
-          <input
+          <div
             id="password"
-            type="text"
-            readOnly
-            value={password}
-            placeholder={isGenerating ? "Generating..." : ""}
-            className="block w-full rounded-md bg-white px-4 py-3 text-xl font-mono tracking-wider text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 dark:bg-gray-800/50 dark:text-gray-50 dark:outline-gray-600 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
-          />
+            onClick={handleCopy}
+            className="block w-full rounded-md bg-white px-4 py-3 text-xl font-mono tracking-wider outline-1 -outline-offset-1 outline-gray-300 cursor-pointer transition-colors hover:bg-gray-50 dark:bg-gray-800/50 dark:outline-gray-600 dark:hover:bg-gray-800/70 min-h-[3rem] flex items-center"
+          >
+            {renderPassword()}
+          </div>
         </div>
       </div>
 
