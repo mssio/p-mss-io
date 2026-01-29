@@ -2,10 +2,24 @@ import { randomInt } from "crypto";
 
 const DIGITS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+/**
+ * Generate a uniformly distributed integer between `start` and `end`, inclusive.
+ *
+ * @param start - The inclusive lower bound of the range
+ * @param end - The inclusive upper bound of the range
+ * @returns An integer between `start` and `end`, inclusive
+ */
 function randomInRange(start: number, end: number): number {
   return randomInt(start, end + 1);
 }
 
+/**
+ * Generate an 18-character password formatted as three groups of six characters separated by hyphens.
+ *
+ * The password contains at least one uppercase letter and at least one digit.
+ *
+ * @returns An 18-character string in the form `xxxxxx-xxxxxx-xxxxxx` that includes at least one uppercase letter and one digit.
+ */
 export function generatePassword(): string {
   // Ensure at least one uppercase and one digit.
   const uppercaseIndex = randomInRange(0, 17);
