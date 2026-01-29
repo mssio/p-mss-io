@@ -7,8 +7,8 @@ export default function NotFound() {
   return (
     <div className="grid min-h-screen grid-cols-1 grid-rows-[1fr_auto_1fr] bg-white lg:grid-cols-[max(50%,36rem)_1fr] dark:bg-gray-900">
       <header className="mx-auto w-full max-w-7xl px-6 pt-6 sm:pt-10 lg:col-start-1 lg:row-start-1 lg:px-8">
-        <a href="#">
-          <span className="sr-only">Your Company</span>
+        <a href="/">
+          <span className="sr-only">p.mss.io</span>
           <Image
             alt="mss.io"
             src={logoLight}
