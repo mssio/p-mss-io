@@ -9,7 +9,9 @@ export default function Home() {
             Secure Password Geenrator
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-gray-600 dark:text-gray-300">
-            Make sure that you always generate strong and secure passwords to keep your accounts safe. Do not reuse passwords across multiple sites.
+            Make sure that you always generate strong and secure passwords to
+            keep your accounts safe. Do not reuse passwords across multiple
+            sites.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link

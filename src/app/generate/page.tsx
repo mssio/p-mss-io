@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import logoLight from "@/assets/images/logo-light.png"
-import logoDark from "@/assets/images/logo-dark.png"
+import logoLight from "@/assets/images/logo-light.png";
+import logoDark from "@/assets/images/logo-dark.png";
 
 export default function Home() {
   return (
