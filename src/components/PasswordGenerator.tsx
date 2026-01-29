@@ -91,24 +91,15 @@ export function PasswordGenerator() {
           </label>
         </div>
         <div className="mt-2">
-          <div
+          <button
+            type="button"
             id="password"
-            role="button"
-            tabIndex={0}
             onClick={handleCopy}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                if (e.key === " ") {
-                  e.preventDefault();
-                }
-                handleCopy();
-              }
-            }}
             aria-label="Click or press Enter or Space to copy password to clipboard"
             className="block w-full rounded-md bg-white px-4 py-3 text-xl font-mono tracking-wider outline-1 -outline-offset-1 outline-gray-300 cursor-pointer transition-colors hover:bg-gray-50 dark:bg-gray-800/50 dark:outline-gray-600 dark:hover:bg-gray-800/70 min-h-[3rem] flex items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500"
           >
             {renderPassword()}
-          </div>
+          </button>
         </div>
       </div>
 
