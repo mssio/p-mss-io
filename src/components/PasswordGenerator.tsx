@@ -55,26 +55,51 @@ export function PasswordGenerator() {
     void generate();
   }, []);
 
+  const renderPassword = () => {
+    if (isGenerating && !password) {
+      return (
+        <span className="text-gray-400 dark:text-gray-500">Generating...</span>
+      );
+    }
+
+    return password.split("").map((char, index) => {
+      const isNumber = /[0-9]/.test(char);
+      return (
+        <span
+          key={index}
+          className={
+            isNumber
+              ? "text-indigo-600 dark:text-indigo-400 font-semibold"
+              : "text-gray-900 dark:text-gray-50"
+          }
+        >
+          {char}
+        </span>
+      );
+    });
+  };
+
   return (
     <div className="space-y-6">
       <div>
         <div className="flex items-center justify-between">
           <label
             htmlFor="password"
-            className="block text-sm/6 font-medium text-gray-900 dark:text-gray-100"
+            className="block text-sm/6 font-medium text-gray-900 dark:text-gray-200"
           >
             Password
           </label>
         </div>
         <div className="mt-2">
-          <input
+          <button
+            type="button"
             id="password"
-            type="text"
-            readOnly
-            value={password}
-            placeholder={isGenerating ? "Generating..." : ""}
-            className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
-          />
+            onClick={handleCopy}
+            aria-label="Click or press Enter or Space to copy password to clipboard"
+            className="block w-full rounded-md bg-white px-4 py-3 text-xl font-mono tracking-wider outline-1 -outline-offset-1 outline-gray-300 cursor-pointer transition-colors hover:bg-gray-50 dark:bg-gray-800/50 dark:outline-gray-600 dark:hover:bg-gray-800/70 min-h-[3rem] flex items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500"
+          >
+            {renderPassword()}
+          </button>
         </div>
       </div>
 
