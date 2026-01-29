@@ -3,8 +3,8 @@ import { generatePassword } from "@/lib/password";
 
 export async function GET(
   _req: NextRequest,
-  { params }: { params: { type: string } },
+  { params }: { params: Promise<{ type: string }> },
 ) {
-  const { type } = params;
+  const { type } = await params;
   return Response.json({ password: generatePassword(), type });
 }
