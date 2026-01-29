@@ -2,7 +2,7 @@ import Image from "next/image";
 import { signOut } from "@workos-inc/authkit-nextjs";
 import logoLight from "@/assets/images/logo-light.png";
 import logoDark from "@/assets/images/logo-dark.png";
-import { PasswordGenerator } from "./PasswordGenerator";
+import { PasswordGenerator } from "@/components/PasswordGenerator";
 
 export default function Home() {
   return (
