@@ -3,9 +3,8 @@ import { generatePassword } from "@/lib/password";
 
 export async function GET(
   _req: NextRequest,
-  ctx: RouteContext<"/api/generate/[type]">,
+  { params }: { params: { type: string } },
 ) {
-  const { type } = await ctx.params;
+  const { type } = params;
   return Response.json({ password: generatePassword(), type });
 }
- 
