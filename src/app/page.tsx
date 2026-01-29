@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="bg-white dark:bg-gray-900">
-      <div className="px-6 py-24 sm:py-32 lg:px-8">
+    <div className="bg-white dark:bg-gray-900 min-h-screen flex items-center justify-center">
+      <div className="px-6 lg:px-8 w-full">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl dark:text-white">
             Secure Password Generator
