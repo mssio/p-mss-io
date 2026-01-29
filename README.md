@@ -1,5 +1,7 @@
 ## p.mss.io – Password Generator
 
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/mssio/p-mss-io?utm_source=oss&utm_medium=github&utm_campaign=mssio%2Fp-mss-io&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
+
 This repo contains the Next.js app that powers the `p.mss.io` password generator.  
 Authenticated users can generate secure passwords via a simple web UI.
 
