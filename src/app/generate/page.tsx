@@ -18,7 +18,7 @@ export default function Home() {
           src={logoDark}
           className="mx-auto h-10 w-auto not-dark:hidden"
         />
-        <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900 dark:text-white">
+        <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900 dark:text-gray-100">
           Generate a Secure Password
         </h2>
       </div>
