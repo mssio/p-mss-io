@@ -1,6 +1,14 @@
 import Link from "next/link";
+import { withAuth } from "@workos-inc/authkit-nextjs";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default async function Home() {
+  const { user } = await withAuth();
+
+  if (user) {
+    redirect("/generate");
+  }
+
   return (
     <div className="bg-white dark:bg-gray-900 min-h-screen flex items-center justify-center">
       <div className="px-6 lg:px-8 w-full">
